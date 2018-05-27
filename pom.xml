@@ -297,12 +297,24 @@
             <version>2.3.19</version>
         </dependency>
 
-        <!-- dom4j读取XML -->
+        <!--netty 网络框架-->
         <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>1.6.1</version>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.10.5.Final</version>
         </dependency>
+        <!--protocol buffers 谷歌开发的数据描述语言-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>SpringMVC</finalName>
