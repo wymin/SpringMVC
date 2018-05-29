@@ -1,4 +1,4 @@
-import com.base.controller.LoginController;
+import com.base.controller.DemoController;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -16,14 +16,14 @@ public class MockMvcTest {
 
     //需要测试的控制器
     @InjectMocks
-    private LoginController loginController;
+    private DemoController demoController;
 
     private MockMvc mockMvc;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(loginController).build();//构造MockMvc
+        mockMvc = MockMvcBuilders.standaloneSetup(demoController).build();//构造MockMvc
     }
 
     @Test

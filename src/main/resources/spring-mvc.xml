@@ -10,6 +10,9 @@
 
     <!-- 启用spring mvc 注解, 默认的注解映射的支持 -->
     <mvc:annotation-driven/>
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <context:component-scan base-package="com"/>
+
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="defaultLocale" value="zh_CN" />
     </bean>
@@ -44,7 +47,7 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="contentType" value="text/html" />
         <property name="prefix" value="/html/"/>
-        <property name="suffix" value=".jsp"/><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑  -->
+        <property name="suffix" value=".html"/><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑  -->
     </bean>
 
 

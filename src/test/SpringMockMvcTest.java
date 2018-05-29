@@ -28,6 +28,7 @@ public class SpringMockMvcTest {
 
     @Before
     public void before(){
+        System.out.println(application.getServletContext().getContextPath());
         this.mvc = MockMvcBuilders.standaloneSetup(this.application).build();
     }
 
