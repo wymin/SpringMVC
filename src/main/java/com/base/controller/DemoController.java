@@ -18,19 +18,6 @@ public class DemoController {
     }
 
     /**
-     * REST风格，基于模板，请求方式../test2/1
-     * @return
-     */
-    @RequestMapping(value = "/test/{id}", method = RequestMethod.POST)
-    public @ResponseBody Map<String,Object> testPost(@PathVariable("id") Long id){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("method","POST");
-        map.put("id",id);
-        System.out.println("Post===>id="+id);
-        return map;
-    }
-
-    /**
      * 传统的请求方式../test2?id=1
      * @param id
      * @return
@@ -39,6 +26,19 @@ public class DemoController {
     public @ResponseBody Map<String,Object> testPost2(@RequestParam(value = "id", defaultValue = "0",required = false) Long id){
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("method","Post,RequestParam");
+        map.put("id",id);
+        System.out.println("Post===>id="+id);
+        return map;
+    }
+
+    /**
+     * REST风格，基于模板，请求方式../test2/1
+     * @return
+     */
+    @RequestMapping(value = "/test/{id}", method = RequestMethod.POST)
+    public @ResponseBody Map<String,Object> testPost(@PathVariable("id") Long id){
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("method","POST");
         map.put("id",id);
         System.out.println("Post===>id="+id);
         return map;
