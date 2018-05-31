@@ -1,8 +1,15 @@
 package com.base.controller;
 
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -88,5 +95,31 @@ public class DemoController {
         return map;
     }
 
+    /**
+     * HttpServlet做参数，并向页面输出一个字符串
+     * @param request
+     * @param response
+     * @param writer
+     */
+    @RequestMapping(path = "/test_servlet")
+    public void testServlet(HttpServletRequest request, HttpServletResponse response, Writer writer){
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("method","test_servlet");
+            jsonObject.put("request",request.toString());
+            jsonObject.put("response",response.toString());
+            writer.write(jsonObject.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @RequestMapping(value = "/test_model")
+    public ModelAndView testModel(){
+        String viewname = "main";
+        ModelAndView modelAndView = new ModelAndView(viewname);
+        modelAndView.addObject("time", new Date());
+        System.out.println("111");
+        return modelAndView;
+    }
 }
