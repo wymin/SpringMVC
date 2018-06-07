@@ -145,11 +145,11 @@
             <version>5.1.34</version>
         </dependency>
 
-        <!-- connection pool -->
+        <!-- Druid数据源 connection pool -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.5</version>
+            <version>1.1.10</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -323,6 +323,7 @@
             <version>2.18.3</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
     <build>
         <finalName>SpringMVC</finalName>
