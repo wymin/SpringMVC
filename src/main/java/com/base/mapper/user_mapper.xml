@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.base.dao.UserDao">
+
+    <resultMap id="resulUser" type="com.base.pojo.User">
+        <result column="id" javaType="id" />
+        <result column="account" javaType="account" />
+        <result column="password" javaType="password" />
+        <result column="name" javaType="name" />
+        <result column="sex" javaType="sex" />
+        <result column="age" javaType="age" />
+        <result column="email" javaType="email" />
+        <result column="mark" javaType="mark" />
+    </resultMap>
+
+    <select id="findAllUser" resultType="com.base.pojo.User">
+        select * from t_user t;
+    </select>
+
+</mapper>

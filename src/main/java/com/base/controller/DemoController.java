@@ -19,11 +19,6 @@ import java.util.Map;
 @Controller
 public class DemoController {
 
-    @RequestMapping(value = "/login")
-    public String login(){
-        return "main";
-    }
-
     /**
      * 传统的请求方式../test2?id=1
      * @param id
